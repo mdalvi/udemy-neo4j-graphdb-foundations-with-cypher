@@ -1,0 +1,2 @@
+match (movie:Movie{title: 'The Da Vinci Code'}) 
+detach delete movie

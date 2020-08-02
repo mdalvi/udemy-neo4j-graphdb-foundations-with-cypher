@@ -1,0 +1,3 @@
+match (quentin:Person{name: 'Quentin Tarantino'}), (movie:Movie{name: 'The Hateful Eight'})
+create (quentin)-[:HAS_CONTACT]->(zoe:Person{name: 'Zoe Bell', born: 1978})-[role:ACTED_IN{earnings: 10000000}]->(movie)
+return quentin, zoe, movie

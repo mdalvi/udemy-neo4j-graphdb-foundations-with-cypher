@@ -1,0 +1,3 @@
+match (a:Person)-[rel:HAS_CONTACT]->(tom:Person{name: 'Tom Hanks'})
+where a <> tom
+delete rel

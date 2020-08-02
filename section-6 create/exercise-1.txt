@@ -1,0 +1,2 @@
+create (m:Movie{name: 'The Hateful Eight'})<-[:DIRECTED]-(a:Person{name: 'Quentin Tarantino'})
+return m, a
