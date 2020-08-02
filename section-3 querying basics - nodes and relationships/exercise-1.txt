@@ -1,0 +1,1 @@
+match (a:Person)-[:HAS_CONTACT]->(b:Person)-[:HAS_CONTACT]->(c:Person) where a <> c return a.name, b.name, c.name limit 5

@@ -1,0 +1,4 @@
+match (actor:Person)-[role:ACTED_IN]->(movie:Movie)
+return toUpper(actor.name), round(avg(role.earnings)) as AverageEarnings
+order by AverageEarnings desc
+limit 1

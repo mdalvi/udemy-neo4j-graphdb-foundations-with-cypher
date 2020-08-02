@@ -1,0 +1,3 @@
+match (a:Person)-[:HAS_CONTACT]->(b:Person)
+optional match (b)-[:DIRECTED]->(movie:Movie)
+return a.name, b.name, movie.title limit 30

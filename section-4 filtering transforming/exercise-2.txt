@@ -1,0 +1,4 @@
+match (tom:Person {name: 'Tom Hanks'})-[:HAS_CONTACT]->(p:Person)-[role:ACTED_IN]->(:Movie)
+where p.born >= 1960 and role.earnings > 10000000
+return p.name as ContactName, p.born as Born, role.earnings as Earnings
+order by role.earnings desc
