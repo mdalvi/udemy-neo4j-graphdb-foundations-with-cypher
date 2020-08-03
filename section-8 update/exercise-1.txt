@@ -1,0 +1,5 @@
+match(actor:Person)-[rel:ACTED_IN]->(movie:Movie)
+with actor, sum(rel.earnings) as totalearnings
+where totalearnings > 50000000
+set actor:Rich, actor.total_earnings = totalearnings
+return actor
