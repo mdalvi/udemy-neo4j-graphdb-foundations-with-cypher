@@ -10,4 +10,5 @@ Learning in progress...
 ## Additional Resources
 
 * [Neo4j Python Driver](https://github.com/neo4j/neo4j-python-driver)
+* [Neo4j Slack Community](http://neo4j-users-slack-invite.herokuapp.com/)
 
