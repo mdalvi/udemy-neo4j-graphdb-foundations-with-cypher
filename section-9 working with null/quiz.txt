@@ -1,0 +1,23 @@
+neo4j$ WITH ( NULL AND false ) AS result RETURN result
+false
+
+neo4j$ WITH ( NULL OR false ) AS result RETURN result
+null
+
+neo4j$ WITH ( 99 IN [1,2,NULL,99] ) AS result RETURN result
+true
+
+neo4j$ WITH ( NULL + [1,2,3] ) AS result RETURN result
+null
+
+neo4j$ WITH ( [1, NULL] + [2, NULL] ) AS result RETURN result
+[1, null, 2, null]
+
+neo4j$ WITH ( NULL IN [1,NULL,2,3] ) AS result RETURN result
+null
+
+// list comprehension in neo4j
+neo4j$ match (person:Person)
+neo4j$ with (['address1', 'address2'] + [person.address]) as partydestinations
+neo4j$ return [address in partydestinations where address is not null | address]
+['address1', 'address2', null]
