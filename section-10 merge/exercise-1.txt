@@ -1,0 +1,5 @@
+match (keanu:Person{name: 'Keanu Reeves'}), (movie:Movie{title: 'Top Gun'})
+merge (keanu)-[view:VIEWED]->(movie)
+on create set view.number_of_times = 0
+on match set view.number_of_times = (view.number_of_times + 1)
+return keanu, movie

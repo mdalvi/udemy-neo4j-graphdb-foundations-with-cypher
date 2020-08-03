@@ -1,0 +1,6 @@
+match (cast1:Person)-[:ACTED_IN]->(m1:Movie{title: 'The Matrix'})
+match (cast2:Person)-[:ACTED_IN]->(m2:Movie{title: 'Top Gun'})
+match path = shortestPath((cast1)-[:HAS_CONTACT*..10]->(cast2))
+return path, length(path) as pathLength, m1, m2
+order by pathLength
+limit 3
